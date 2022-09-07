@@ -60,10 +60,10 @@ __Physical specs:__
 __Commands:__
 
 ```bash
-canbus send can0 0x123 0xDE 0xAD 0xBE 0xEF          #Send DEADBEEF with ID=0x123 on can0
-canbus send can0 -e 0x12345678 0xDE 0xAD 0xBE 0xEF  #Send DEADBEEF with extID=0x12345678 on can0
-canbus add_rx_filter can0 0x001                     #Listen for messages with ID=0x001 on can0 (Return Filter ID)
-canbus add_rx_filter can0 -e 0x12345678             #Listen for messages with ID=0x12345678 on can0 (Return Filter ID)
-canbus remove_rx_filter can0 0                      #Stop listening for Filter 0
-canbus config can0 250000                           #Set can0 bitrate at 250000 kbit/s
+can send can0 0x123 0xDE 0xAD 0xBE 0xEF          #Send DEADBEEF with ID=0x123 on can0
+can send can0 -e 0x12345678 0xDE 0xAD 0xBE 0xEF  #Send DEADBEEF with extID=0x12345678 on can0
+can filter add can0 0x001                        #Listen for messages with ID=0x001 on can0 (Return Filter ID)
+can filter add can0 -e 0x12345678                #Listen for messages with ID=0x12345678 on can0 (Return Filter ID)
+can filter remove can0 0                         #Stop listening for Filter 0
+can bitrate can0 250000                          #Set can0 bitrate at 250000 kbit/s
 ```
