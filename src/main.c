@@ -1,5 +1,5 @@
 
-#include <zephyr.h>
+#include <zephyr/kernel.h>
 
 void main()
 {
