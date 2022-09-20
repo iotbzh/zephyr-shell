@@ -67,3 +67,16 @@ can filter add can0 -e 0x12345678                #Listen for messages with ID=0x
 can filter remove can0 0                         #Stop listening for Filter 0
 can bitrate can0 250000                          #Set can0 bitrate at 250000 kbit/s
 ```
+
+## PWM
+
+__Physical specs:__
+
+- Bus PWM0 available on CP8 pin test on ULCB boards
+
+__Commands:__
+
+```bash
+pwm usec pwm@e6e30000 0 10000 5000
+pwm nsec pwm@e6e30000 0 5000000 2500000
+```
