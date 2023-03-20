@@ -52,14 +52,14 @@ requires: clock-controller@e6150000
 
 __Physical specs:__
 
-- GPIO6 (pwm@e6e30000) Pin 12 -> H3 LED5
+- GPIO6 (gpio@e6055400) Pin 12 -> H3 LED5
 
 __Available commands:__
 
 ```bash
-gpio set pwm@e6e30000 12 1  #Turn LED5 on
-gpio set pwm@e6e30000 12 0  #Turn LED5 off
-gpio get pwm@e6e30000 12    #Get LED5 status
+gpio set gpio@e6055400 12 1  #Turn LED5 on
+gpio set gpio@e6055400 12 0  #Turn LED5 off
+gpio get gpio@e6055400 12    #Get LED5 status
 ```
 
 ## I2C
@@ -73,7 +73,7 @@ __Physical specs:__
 __Commands:__
 
 ```bash
-i2c read_byte i2c@e6510000 0x74 0x02         #Get "output 0" current value for 0x74 addressed TCA9539
+i2c read_byte  i2c@e6510000 0x74 0x02        #Get "output 0" current value for 0x74 addressed TCA9539
 i2c write_byte i2c@e6510000 0x74 0x02 0x00   #Set output 0 to 0x00 for 0x74 addressed TCA9539
 i2c write_byte i2c@e6510000 0x74 0x02 0xff   #Set output 0 to 0xff for 0x74 addressed TCA9539
 ```
